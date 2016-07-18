@@ -148,13 +148,10 @@ window.addEventListener('click', (e) => {
 let setClickPosition = (e) => {
 	let x = e.clientX,
 	    y = e.clientY,
-	    menu = $id('main-menu'),
-	    temp = x - 10,
-	    tempStr = temp + 'px';
+	    menu = $id('main-menu');
 
 	topMenuPosition = y;
 	leftMenuPosition = x;
-	menu.style.left = tempStr;
 	menu.style.left = x - 10 + 'px';
 	menuHeight = menu.clientHeight;
 	menuWidth = menu.clientWidth;
@@ -226,7 +223,6 @@ let getRelativePosition = (item) => {
 	let menu = $id('main-menu');
 	if (item != menu) {
 		if(item.parentNode.parentNode !== menu && item.parentNode.parentNode.offsetTop < -1) {
-			// trouble
 			relativeSubmenuPositionY -= item.parentNode.parentNode.offsetHeight - item.parentNode.offsetTop - item.parentNode.clientHeight;
 		}
 		else {
